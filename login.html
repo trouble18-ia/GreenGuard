@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | GreenGuard</title>
+  <link rel="stylesheet" href="./css/style_login.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+
+</head>
+
+<body>
+  <!-- Custom Alert Box -->
+  <div id="custom-alert" style="display:none;" class="alert-box"></div>
+
+  <!-- Navigation -->
+  <div class="main-nav">
+    <div class="nav-wrapper">
+      <div class="logo-title">
+        <h1>GreenGuard</h1>
+      </div>
+      <div class="hamburger" onclick="toggleMobileNav()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Donate</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Login Form -->
+  <!-- Logo, Login Form & Social Icons -->
+  <div class="form-container" id="login-form">
+    <!-- Circular Icon -->
+    <div class="user-icon">
+      <img src="./images/logo.png" alt="GreenGuard Logo" />
+    </div>
+
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" required />
+      </div>
+      <button type="submit">Login</button>
+
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="#"><img src="./images/x.png" alt="X" /></a>
+        <a href="#"><img src="./images/ig.png" alt="Instagram" /></a>
+        <a href="#"><img src="./images/fb.png" alt="Facebook" /></a>
+        <a href="#"><img src="./images/youtube.png" alt="YouTube" /></a>
+      </div>
+
+      <a href="#signup-form" class="toggle-link" onclick="toggleForm()">Don't have an account? Sign Up</a>
+    </form>
+  </div>
+
+
+  <!-- Signup Form -->
+  <div class="form-container" id="signup-form" style="display:none;">
+    <h2>Create Account</h2>
+    <form action="/signup" method="POST" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="full_name" required />
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Email Address</label>
+        <input type="email" id="confirm_email" name="confirm_email" required />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" required />
+      </div>
+
+      <button type="submit">Sign Up</button>
+      <a href="#login-form" class="toggle-link" onclick="toggleForm()">Already have an account? Login</a>
+    </form>
+  </div>
+  <footer style="background-color: var(--dark-green); color: white; text-align: center; padding: 1rem;">
+    <p>&copy; 2025 GreenGuard. All rights reserved.</p>
+  </footer>
+
+
+  <script href="./js/script.js"></script>
+
+
+</body>
+
+</html>
