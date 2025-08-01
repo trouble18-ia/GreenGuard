@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | GreenGuard</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="contact-header">
+    <button class="contact-hamburger" onclick="toggleContactNav()">☰</button>
+    <nav class="contact-nav" id="contactNavLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-section">
+      <h1>Contact GreenGuard</h1>
+      <p>If you have any questions, suggestions, or partnership inquiries, feel free to reach out to us using the form below.</p>
+
+      <form class="contact-form" action="/submit-contact" method="POST">
+        <div class="contact-form-group">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" name="name" required />
+        </div>
+        <div class="contact-form-group">
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" name="email" required />
+        </div>
+        <div class="contact-form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="contact-footer">
+    <p>&copy; 2025 GreenGuard. All rights reserved.</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

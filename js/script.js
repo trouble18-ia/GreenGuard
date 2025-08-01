@@ -71,3 +71,51 @@ const hamburger = document.querySelector('.hamburger');
       const nav = document.getElementById("navLinks");
       nav.classList.toggle("show");
     }
+    
+    //SCRIPT FOR ABOUT PAGE
+    function toggleAboutNav() {
+  const nav = document.getElementById("aboutNavLinks");
+  nav.classList.toggle("show");
+}
+
+//SCRIPT FOR CONTACT PAGE
+function toggleContactNav() {
+  const nav = document.getElementById("contactNavLinks");
+  nav.classList.toggle("show");
+}
+
+//SCRIPT FOR DONATE PAGE
+function toggleDonateNav() {
+  const nav = document.getElementById("donateNavLinks");
+  nav.classList.toggle("show");
+}
+
+function validateDonateForm() {
+  const name = document.getElementById("donor-name").value.trim();
+  const email = document.getElementById("donor-email").value.trim();
+  const amount = document.getElementById("donate-amount").value;
+
+  if (!name || !email || amount <= 0) {
+    alert("Please fill in all fields correctly.");
+    return false;
+  }
+
+  document.getElementById("donateThankYou").style.display = "block";
+  return false; // Prevent form submission for demo
+}
+
+//SCRIPT FOR MARKETPLACE PAGE
+function toggleMarketNav() {
+  const nav = document.getElementById("marketNavLinks");
+  nav.classList.toggle("show");
+}
+//SCRIPT FOR NEWS PAGE
+function toggleNewsNav() {
+  const nav = document.getElementById("newsNavLinks");
+  nav.classList.toggle("show");
+}
+//SCRIPT FOR COMMUNITY PAGE
+function toggleCommunityNav() {
+  const nav = document.getElementById("communityNavLinks");
+  nav.classList.toggle("show");
+}

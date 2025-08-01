@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate | GreenGuard</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="donate-header">
+    <button class="donate-hamburger" onclick="toggleDonateNav()">☰</button>
+    <nav class="donate-nav" id="donateNavLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="active">Donate</a>
+    </nav>
+  </header>
+
+  <main class="donate-main">
+    <section class="donate-section">
+      <h1>Support GreenGuard</h1>
+      <p>Your donations help us conserve the environment and support local agricultural initiatives.</p>
+
+      <form class="donate-form" onsubmit="return validateDonateForm()">
+        <div class="donate-form-group">
+          <label for="donor-name">Full Name</label>
+          <input type="text" id="donor-name" name="name" required />
+        </div>
+        <div class="donate-form-group">
+          <label for="donor-email">Email</label>
+          <input type="email" id="donor-email" name="email" required />
+        </div>
+        <div class="donate-form-group">
+          <label for="donate-amount">Donation Amount (KSH)</label>
+          <input type="number" id="donate-amount" name="amount" required />
+        </div>
+        <button type="submit" class="donate-submit">Donate Now</button>
+        <p class="donate-thankyou" id="donateThankYou" style="display:none;">Thank you for your support! ❤️</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="donate-footer">
+    <p>&copy; 2025 GreenGuard. All rights reserved.</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
