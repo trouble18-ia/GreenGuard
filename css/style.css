@@ -902,3 +902,434 @@ body {
   }
 }
 
+/* CSS FOR DASHBOARD PAGE */
+:root {
+  --main-green: #2d6a4f;
+  --light-green: #d8f3dc;
+  --dark-green: #1b4332;
+  --white: #ffffff;
+  --hover-green: #40916c;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--light-green);
+  color: var(--dark-green);
+}
+
+/* Header & Navbar */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: var(--main-green);
+  color: var(--white);
+  position: relative;
+}
+
+.dash-logo-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 30%;
+  object-fit: cover;
+}
+
+.dash-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.dash-menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.dash-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.dash-nav a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.dash-user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.dash-profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dash-username {
+  font-weight: bold;
+}
+
+.dash-notification {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.dash-notification-box {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 60px;
+  background: var(--white);
+  color: var(--dark-green);
+  padding: 10px;
+  border-radius: 5px;
+  width: 220px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+/* Profile dropdown */
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: var(--white);
+  color: var(--dark-green);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  width: 180px;
+  z-index: 1000;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--dark-green);
+  border-bottom: 1px solid #eee;
+}
+
+.profile-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown a:hover {
+  background-color: var(--light-green);
+}
+
+/* Main */
+.dash-main {
+  padding: 20px;
+}
+
+.dash-welcome {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dash-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dash-box {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.dash-box:hover {
+  background-color: var(--light-green);
+}
+
+/* Sections */
+.task-section,
+.donate-section {
+  margin-top: 30px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.task-toggle-btn {
+  background-color: var(--hover-green);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-list {
+  display: none;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.task-list li {
+  margin-bottom: 10px;
+}
+
+.task-list a {
+  text-decoration: none;
+  color: var(--main-green);
+  font-weight: 500;
+}
+
+/* Donate Button */
+.dash-donate-btn {
+  background-color: var(--main-green);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dash-donate-btn:hover {
+  background-color: var(--hover-green);
+}
+
+/* Footer */
+.dash-footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--dark-green);
+  color: var(--white);
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dash-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--main-green);
+    margin-top: 10px;
+  }
+
+  .dash-nav.show {
+    display: flex;
+  }
+
+  .dash-menu-icon {
+    display: block;
+  }
+
+  .dash-user-area {
+    margin-top: 10px;
+  }
+}
+
+/* Task Popup */
+.task-popup-overlay,
+.status-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-popup-box,
+.status-popup-box {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.task-popup-close,
+.status-popup-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.task-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.task-card {
+  background-color: var(--light-green);
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.task-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.task-desc {
+  font-size: 14px;
+  color: var(--dark-green);
+}
+
+/* Task status list inside popup */
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.status-list li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.status-list li.completed {
+  color: green;
+}
+
+.status-list li.pending {
+  color: orange;
+}
+/* Show dropdown when toggled */
+.profile-dropdown.show {
+  display: block;
+}
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-overlay.show {
+  display: flex;
+}
+
+.popup-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.balance-history {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.balance-history li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+.logout-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 30, 20, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.logout-popup-overlay.show {
+  display: flex;
+}
+
+.logout-popup-box {
+  background: var(--light-green, #d8f3dc);
+  color: var(--dark-green, #1b4332);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logout-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.logout-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.logout-loader {
+  border: 4px solid #c7f9cc;
+  border-top: 4px solid #1b4332;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

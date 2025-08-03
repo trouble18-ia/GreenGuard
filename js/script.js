@@ -119,3 +119,73 @@ function toggleCommunityNav() {
   const nav = document.getElementById("communityNavLinks");
   nav.classList.toggle("show");
 }
+//SCRIPT FOR DASHBOARD PAGE
+function toggleNavbar() {
+    document.getElementById('dashNavbar').classList.toggle('show');
+  }
+
+  function toggleNotifications() {
+    const box = document.getElementById('notificationBox');
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function openTaskPopup() {
+    document.getElementById("taskPopup").style.display = "flex";
+  }
+
+  function closeTaskPopup() {
+    document.getElementById("taskPopup").style.display = "none";
+  }
+
+  function openTaskStatusPopup() {
+    document.getElementById("taskStatusPopup").style.display = "flex";
+  }
+
+  function closeTaskStatusPopup() {
+    document.getElementById("taskStatusPopup").style.display = "none";
+  }
+
+  function toggleBalanceHistory() {
+    const popup = document.getElementById("balancePopup");
+    popup.classList.toggle("show");
+  }
+
+  function toggleProfileMenu() {
+    const menu = document.getElementById("profileMenu");
+    menu.classList.toggle("show");
+  }
+
+  // Close profile menu if clicked outside
+  document.addEventListener('click', function(event) {
+    const profile = document.querySelector('.dash-user-greeting');
+    const dropdown = document.getElementById('profileMenu');
+    if (!profile.contains(event.target) && !dropdown.contains(event.target)) {
+      dropdown.classList.remove('show');
+    }
+  });
+
+  // Show the logout popup styled with theme
+  function showLogoutPopup() {
+    const popup = document.getElementById("logoutPopup");
+    popup.classList.add("show");
+
+    // Redirect to homepage after 3 seconds
+    setTimeout(() => {
+      popup.classList.remove("show");
+      window.location.href = "index.html"; // change if homepage URL differs
+    }, 3000);
+  }
+
+  // In case you want to manually close it (not used by default)
+  function closeLogoutPopup() {
+    const popup = document.getElementById("logoutPopup");
+    popup.classList.remove("show");
+  }
+
+  // Call this function when logout button is clicked
+  function logout() {
+    showLogoutPopup();
+  }
+
+
+  

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard | GreenGuard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header class="dash-header">
+        <div class="dash-logo-wrapper">
+            <img src="images/logo-small.png" alt="GreenGuard Logo" class="dash-logo">
+            <div class="dash-menu-icon" onclick="toggleNavbar()">&#9776;</div>
+        </div>
+        <nav class="dash-nav" id="dashNavbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="dash-user-area">
+            <div class="dash-notification" onclick="toggleNotifications()">
+                🔔
+                <div class="dash-notification-box" id="notificationBox">
+                    <p>No new notifications.</p>
+                </div>
+            </div>
+            <div class="dash-user-greeting" onclick="toggleProfileMenu()">
+                <img src="images/team_jane.jpg" alt="Profile" class="dash-profile-pic">
+                <span class="dash-username">Hi, User</span>
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="#">View Profile</a>
+                    <a href="#">Edit Profile</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dash-main">
+        <h2 class="dash-welcome">Welcome to GreenGuard Dashboard</h2>
+
+        <section class="dash-overview">
+            <!-- Clickable Balance Box -->
+            <div class="dash-box balance-box" onclick="toggleBalanceHistory()">
+                <h3>Balance</h3>
+                <p>Ksh 1,500</p>
+            </div>
+
+            <!-- Clickable Tasks & Activities Box -->
+            <div class="dash-box tasks-box" onclick="openTaskStatusPopup()">
+                <h3>Tasks & Activities</h3>
+                <p>Completed: 2 | Pending: 3</p>
+            </div>
+        </section>
+
+        <!-- Balance Popup -->
+        <div class="popup-overlay" id="balancePopup">
+            <div class="popup-box">
+                <span class="popup-close" onclick="toggleBalanceHistory()">&times;</span>
+                <h3>Balance History</h3>
+                <ul class="balance-history">
+                    <li>+ Ksh 300 from 30 Points (Tree Planting)</li>
+                    <li>+ Ksh 500 from 50 Tokens (Plastic Collection)</li>
+                    <li>+ Ksh 700 from 70 Points (Eco Article Writing)</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="dash-section task-section">
+            <h3>Tasks</h3>
+            <button class="task-toggle-btn" onclick="openTaskPopup()">Choose a Task</button>
+
+            <!-- Fancy Task Selection Popup -->
+            <div class="task-popup-overlay" id="taskPopup">
+                <div class="task-popup-box">
+                    <span class="task-popup-close" onclick="closeTaskPopup()">✖</span>
+                    <h4>Select an Environmental Task</h4>
+                    <div class="task-card-grid">
+                        <div class="task-card">
+                            <div class="task-icon">📷</div>
+                            <h5>Take Photos</h5>
+                            <p>Capture environmental pollution or clean spaces.</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">🎥</div>
+                            <h5>Record Video</h5>
+                            <p>Film a 30s cleanup activity in your neighborhood.</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">📝</div>
+                            <h5>Write Article</h5>
+                            <p>Write an eco-awareness post and submit it.</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">🌱</div>
+                            <h5>Plant a Tree</h5>
+                            <p>Plant a tree and upload the location as evidence.</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">♻️</div>
+                            <h5>Recycle</h5>
+                            <p>Take a photo of items you have recycled.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Status Popup -->
+            <div class="task-popup-overlay" id="taskStatusPopup">
+                <div class="task-popup-box">
+                    <span class="task-popup-close" onclick="closeTaskStatusPopup()">✖</span>
+                    <h4>Your Task Progress</h4>
+                    <div class="task-status-section">
+                        <h5>✅ Completed</h5>
+                        <ul>
+                            <li>Take Photos of local river cleanup</li>
+                            <li>Recycle plastic bottles</li>
+                        </ul>
+                        <h5>🕒 Pending</h5>
+                        <ul>
+                            <li>Write an article on pollution</li>
+                            <li>Record a community cleanup video</li>
+                            <li>Plant a tree and tag location</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logout Popup -->
+        <div class="logout-popup-overlay" id="logoutPopup">
+            <div class="logout-popup-box">
+                <h3 class="logout-title">Logged Out Successfully</h3>
+                <p class="logout-message">See you again soon, eco warrior!</p>
+                <div class="logout-loader"></div>
+            </div>
+        </div>
+
+
+        <section class="dash-section donate-section">
+            <h3>Donate</h3>
+            <p>Support a greener world. Make a donation today and earn extra tokens!</p>
+            <a href="donate.html"> <button class="dash-donate-btn">Donate Now</button>
+
+        </section>
+    </main>
+
+    <footer class="dash-footer">
+        <p>&copy; 2025 GreenGuard. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
